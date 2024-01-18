@@ -1,0 +1,24 @@
+.whiteBox{
+    width: 70vw;
+    height: 70vh;
+    background-color: white;
+    border:5px solid #8E7CC3;
+}
+
+.purpleBox{
+    width: 70vw;
+    height: 70vh;
+    background-color: #8E7CC3;
+    position: absolute;
+    z-index: -1;
+    margin-top: 80px;
+    margin-left: 80px;
+}
+
+.mainArea{
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

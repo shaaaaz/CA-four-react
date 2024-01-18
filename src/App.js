@@ -15,10 +15,12 @@ import Navbar from './components/Navbar'
 function App() {
 
   return (
-    <div>
+    <div className="container">
       <img src={backgroundLight} className="background-image"/>
 
       <Navbar/>
+
+      <QuestionBox/>
       
     </div>
   );
