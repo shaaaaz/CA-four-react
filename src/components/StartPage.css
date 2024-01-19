@@ -1,0 +1,37 @@
+.startImg{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 100;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 200;
+}
+
+.heading{
+    font-size: 10vw;
+    font-weight: 900;
+    margin: 30px 0;
+    color: #8E7CC3;
+}
+
+.start{
+    background-color: #8E7CC3;
+    width: 20vw;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8vw;
+    font-weight: 600;
+}

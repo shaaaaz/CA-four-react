@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'K2D';
 }
 
 .background-image{
@@ -10,3 +13,59 @@
     z-index: -10;
     position: absolute;
 }
+
+.whiteBox{
+    width: 62vw;
+    height: 72vh;
+   
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.purpleBox{
+    width: 62vw;
+    height: 72vh;
+    position: absolute;
+    z-index: -1;
+    margin-top: 60px;
+    margin-left: 60px;
+}
+
+.mainArea{
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar{
+    width: 100vw;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px;
+}
+
+.logoImg{
+    height: 85%;
+}
+
+.theme-change-button{
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    padding-right: 9px;
+    display: flex;
+    align-items: center;
+}
+
+.circle{
+    border-radius: 60px;
+    height: 25px;
+    width: 25px;
+}
+
