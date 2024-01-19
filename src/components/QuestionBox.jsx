@@ -4,7 +4,7 @@ import './QuestionBox.css'
 export default function QuestionBox(props) {
 
   const questionsList = props.questions
-  console.log(questionsList)
+  // console.log(questionsList)
 
   const theme = props.theme
 
@@ -129,35 +129,51 @@ export default function QuestionBox(props) {
     }
   }
 
+
+
+
+
+  const [currQuestion,setCurrQuestion] = useState(0)
+
+  let question = questionsList[currQuestion].text
+  let options = questionsList[currQuestion].options
+
+  console.log(options)
+
+  function handleOptionClick(){
+    setCurrQuestion(currQuestion + 1)
+  }
+
+
   return (
     <div className='mainContainer'>
       <div className="mainArea">
         <div className="whiteBox" style={whiteBoxStyle}>
-          <div className="questionsOutOf" style={heading1}>Question 1 out of 5</div>
+          <div className="questionsOutOf" style={heading1}>Question {currQuestion + 1} out of 5</div>
 
-          <div className="question" style={heading2} id='highlightThis'>What is ReactJS?</div>
+          <div className="question" style={heading2} id='highlightThis'>{question}</div>
 
           <div className="optionsArea"style={heading3}>
 
             <div className="opBlock">
-              <div className="option">
-                <div className="optionWhitePart" style={optionBoxStyle}>Server-side framework</div>
+              <div className="option" onClick={handleOptionClick}>
+                <div className="optionWhitePart" style={optionBoxStyle}>{options[0].text}</div>
                 <div className="optionPurplePart" style={optionBox2Style}></div>
               </div>
-              <div className="option">
-                <div className="optionWhitePart" style={optionBoxStyle}>User interface framework</div>
+              <div className="option" onClick={handleOptionClick}>
+                <div className="optionWhitePart" style={optionBoxStyle}>{options[1].text}</div>
                 <div className="optionPurplePart" style={optionBox2Style}></div>
               </div>
             </div>
 
             <div className="opBlock">
 
-            <div className="option">
-                <div className="optionWhitePart" style={optionBoxStyle}>Both A and B</div>
+            <div className="option" onClick={handleOptionClick}>
+                <div className="optionWhitePart" style={optionBoxStyle}>{options[2].text}</div>
                 <div className="optionPurplePart" style={optionBox2Style}></div>
               </div>
-              <div className="option">
-                <div className="optionWhitePart" style={optionBoxStyle}>None of the Above</div>
+              <div className="option" onClick={handleOptionClick}>
+                <div className="optionWhitePart" style={optionBoxStyle}>{options[3].text}</div>
                 <div className="optionPurplePart" style={optionBox2Style}></div>
               </div>
             </div>
