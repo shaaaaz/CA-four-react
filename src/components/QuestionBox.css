@@ -11,7 +11,6 @@
 }
 
 .optionWhitePart{
-    font-size: 1vw;
     width: 23vw;
     height: 75px;
     display: flex;
@@ -52,4 +51,25 @@
     border: none;
     font-size: 1vw;
     font-weight: 800;
+}
+
+.hideIt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;    
+}
+
+.hidden{
+    display: none;
+}
+
+.option{
+    font-size: 18px;
+}
+
+.high:hover,.option:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    font-size: 20px;
 }

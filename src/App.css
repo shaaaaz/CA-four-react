@@ -69,3 +69,27 @@
     width: 25px;
 }
 
+.start{
+    background-color: #8E7CC3;
+    width: 20vw;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2vw;
+    font-weight: 600;
+    position: absolute;
+    z-index: 1000;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.hideee{
+    display: none;
+}
+
+.start:hover{
+    cursor: pointer;
+}

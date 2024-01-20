@@ -31,7 +31,7 @@ const questions = [
   {
     text: "What is the return value of the useState hook?",
     options: [
-      { id: 0, text: "Pair of Current State and Function updating it", isCorrect: true },
+      { id: 0, text: "Pair of Current State & Function updating it", isCorrect: true },
       { id: 1, text: "Current State", isCorrect:  false },
       { id: 2, text: "Function Updating the Current State", isCorrect:  false },
       { id: 3, text: "useState Returns Nothing", isCorrect:  false },
@@ -40,8 +40,8 @@ const questions = [
   {
     text: "How many elements can a valid react component return?",
     options: [
-      { id: 0, text: "1", isCorrect: false },
-      { id: 1, text: "2", isCorrect:  true  },
+      { id: 0, text: "1", isCorrect: true },
+      { id: 1, text: "2", isCorrect:  false  },
       { id: 2, text: "3", isCorrect:  false },
       { id: 3, text: "4", isCorrect:  false},
     ],

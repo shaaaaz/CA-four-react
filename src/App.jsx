@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-
+// importing different images -> Logo and background Image
 import backgroundLight from './images/backgroundLight.png'
 import backgroundDark from './images/backgroundDark.png'
-
 import logoImgLight from './images/logoLight.png'
 import logoImgDark from './images/logoDark.png'
-
+//importing question from questions.js
 import questions from "./questions";
-import Result from "./components/Result";
+//importing diffreent components that will be aclled later
 import QuestionBox from "./components/QuestionBox";
-
 import StartPage from './components/StartPage'
 
 
@@ -18,15 +16,7 @@ import StartPage from './components/StartPage'
 
 function App() {
 
-  const SPVisible = {
-    "display":"block"
-  }
-
-  const SPHidden = {
-    "display":"hidden"
-  }
-
-  const [startPageStyle,setStartPageStyle] = useState(SPVisible)
+  //writing style for dark mode and light mode 
 
   const navbarStyleDark = {
     "backgroundColor": "#292929",
@@ -60,25 +50,30 @@ function App() {
     "justifyContent": "end"
   }
 
+  //using state to iterate between light mode and dark mode style
+  // initial value of state is set as light mode using useState
 
-  const [theme,setTheme] = useState("light")
-  const [background,setBackground] = useState(backgroundLight)
-  const [logoImg,setLogoImg] = useState(logoImgLight)
-  const [navbarStyle,setNavbarStyle] = useState(navbarStyleLight)
-  const [circleStyle,setCircleStyle] = useState(circleStyleLight)
-  const [buttonStyle,setButtonStyle] = useState(buttonStyleLight)
+  const [theme, setTheme] = useState("light")
+  const [background, setBackground] = useState(backgroundLight)
+  const [logoImg, setLogoImg] = useState(logoImgLight)
+  const [navbarStyle, setNavbarStyle] = useState(navbarStyleLight)
+  const [circleStyle, setCircleStyle] = useState(circleStyleLight)
+  const [buttonStyle, setButtonStyle] = useState(buttonStyleLight)
 
-  
+  //when change theme button is clicked theme should change from light to dark and vice versa
 
-  function changeTheme(){
-    if(theme == "light"){
+  function changeTheme() {
+    if (theme == "light") {
       setTheme("dark")
     }
-    else{
+    else {
       setTheme("light")
     }
-    console.log(theme)
   }
+
+  // when theme is changed the backgroudn heading and everything should change its style
+  // useEffect will only be trigerred when there is change in theme and not otherwise
+  // if theme is set as dark mode then dark mode style wil be selected and set to its state
 
   useEffect(() => {
     setBackground(theme == "dark" ? backgroundDark : backgroundLight)
@@ -86,21 +81,29 @@ function App() {
     setNavbarStyle(theme == "dark" ? navbarStyleDark : navbarStyleLight)
     setCircleStyle(theme == "dark" ? circleStyleDark : circleStyleLight)
     setButtonStyle(theme == "dark" ? buttonStyleDark : buttonStyleLight)
-  },[theme])
+  }, [theme])
 
-  function handleStart(){
-    setStartPageStyle(SPHidden)
-    console.log(startPageStyle)
+  // when START button is clicked on the home page the start page should go HIDDEN
+
+  function startQuiz() {
+    document.querySelector('.hideMe').classList.toggle('hideee')
   }
+
+  // here we are returning htmp using jsx to where the App file is called
 
   return (
 
     <div className="container">
+      {/* background image which will change using state */}
       <img src={background} className="background-image" />
 
-      {/* <StartPage style={startPageStyle} onClick={handleStart} /> */}
+      {/* Start Page which will go hidden when button is clicked */}
+      <div className="hideMe">
+        <StartPage />
+        <div className="start" onClick={startQuiz}>START</div>
+      </div>
 
-
+      {/* Navbar component which has button that changes theme aswell */}
       <div className="navbar" style={navbarStyle}>
         <div></div>
         <img src={logoImg} alt="logo-light" className="logoImg" />
@@ -109,12 +112,13 @@ function App() {
         </button>
       </div>
 
-      <QuestionBox questions={questions} theme={theme}/>
-
-      {/* <Result/> */}
-
+      {/* Question.jsx is called  and theme and list of questions are passed as 
+          props which can then be accessed by question bpx*/}
+      <QuestionBox questions={questions} theme={theme} />
     </div>
   );
 }
 
+
+// exporting App to make it visble in index.js
 export default App;

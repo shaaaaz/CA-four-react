@@ -1,7 +1,6 @@
 .finalResult{
     font-weight: 700;
     font-size: 4.5vw;
-    color:#635394;
 }
 
 .whiteBox{
@@ -39,5 +38,9 @@
     position: absolute;
     z-index:1;
     margin-top: -80px;
-    margin-left: 10px;
+    margin-left: 17px;
+}
+
+.restartArea:hover{
+    cursor: pointer;
 }

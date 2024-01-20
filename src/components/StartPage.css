@@ -11,7 +11,7 @@
     justify-content: start;
     flex-direction: column;
     position: absolute;
-    top: 47%;
+    top: 44%;
     left: 50%;
     transform: translate(-50%,-50%);
     z-index: 200;
@@ -24,14 +24,3 @@
     color: #8E7CC3;
 }
 
-.start{
-    background-color: #8E7CC3;
-    width: 20vw;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.8vw;
-    font-weight: 600;
-}
